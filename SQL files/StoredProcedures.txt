@@ -1,0 +1,33 @@
+create procedure property_tax(in CNIC integer)
+select 0.05*sum(pt.annual_value) from property_tax as pt
+group by pt.CNIC
+having CNIC = pt.CNIC;
+call tax_management_system.property_tax(123);
+
+create procedure income_tax(in CNIC integer)
+select 0.007*it.annual_income from income_tax as it
+where it.CNIC = CNIC;
+call income_tax(123);
+
+create procedure sales_tax(in CNIC integer)
+select 0.17*gd.quantity*gd.value from goods_details gd join sales_tax st using(consumer_num)
+where st.CNIC = CNIC;
+call sales_tax(123);
+
+create view active_tax_payer as
+select distinct tp.CNIC 
+from tax_payer tp join income_tax it using(CNIC) join vehicle_tax vt using(CNIC) 
+join property_tax pt using(CNIC)
+where it.payment_status='paid' and
+vt.payment_status = 'paid' and
+pt.payment_status = 'paid';
+select* from active_tax_payer;
+
+create procedure vehicle_tax_active(in engine_size int)
+select if(engine_size < 1000,800,
+(select if(engine_size < 1200,1500,
+(select if(engine_size < 1300,1750,
+(select if(engine_size < 1500,2500,
+(select if(engine_size < 1600,3750,
+(select if(engine_size < 2000,4500,10000)))))))))));
+call vehicle_tax_active(2000);

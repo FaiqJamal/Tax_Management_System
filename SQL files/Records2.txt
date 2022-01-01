@@ -1,0 +1,8 @@
+String queryIncome = "{CALL tax_management_system.income_tax(?)}";
+   CallableStatement stmtIncome = conn.prepareCall(query);
+   stmtIncome.setInt(1,cnic_i);
+   ResultSet rsIncome;
+   rsIncome=stmt1.executeQuery();
+   while(rsIncome.next()){
+       out.println("Property Total Tax: "+rsIncome.getString(1));
+   }

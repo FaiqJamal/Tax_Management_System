@@ -1,0 +1,29 @@
+insert into accountant values('6343112231312','accountant2');
+insert into tax_payer values('6139551345671','Azhar Saeed','azhar@gmail.com','Pakistan','House No 124, Street 18,Islamabad','0345723556'),
+('6254315945535','Ahraz Afzal','ahraz@gmail.com','Pakistan','House no 425,F-7/3 Islamabad','0323567881'),
+('691466123123','Raza Ali','raza@gmail.com','Pakistan','House no 345, Street 17,Islamabad','03457823556'),
+('64327325544','Javeria Mehmood','javeria@gmail.com','Pakistan','House no 576, Street 20, Islamabad','033367890');
+insert into tax_payer values('5594341123374','Afifa Shaukat','afifa@gmail.com','Pakistan','House no 564 Street 13,Quetta','03367832551'),
+('561391214592','Sobia Ali','sobia@gmail.com','Pakistan','House no 456, Street 12, Quetta','03234563886'),
+('579126640841','Jawad Ali','jawad@gmail.com','Pakistan','House no 123, Street 14, Quetta','03214147786'),
+('587304415103','Ammar Khalid','ammar@gmail.com','Pakistan','House no 12, Street 6, Quetta','0321488654');
+
+
+insert into tax_payer(CNIC,name,email_address,phone,nationality,residential_address)
+values ('3681924318894','Sara Hussain','saraf@gmail.com','03361238561','Pakistan','House no 84 Street 3 Fazaia Society Faisalabad'),
+('3124789312257','Ajmal Khan','ajk@gmail.com','03415234321','Pakistan','House no 324 Street 19 Main Society Sialkot'),
+('3432578874331','Arsalan Majeed','arsalan@gmail.com','03123826336','Pakistan','House no 79 Street 22 Welfare Society Multan');
+
+insert into tax_payer(CNIC,name,email_address,phone,nationality,residential_address)
+values ('1853271925678','Hirra Iftikhar','hirra@gmail.com','03127459011','Pakistan','House no 613 Street 9 Main Society Peshawar'),
+('1497283143213','Mudassir Zaheer','mudassir@gmail.com','03327521002','Pakistan','House no 11 Street 18 Main Society Peshawar'),
+('1349567812231','Sajid Iqbal','sajid@gmail.com','03335527991','Pakistan','House no 123 Street 3 Falcon Colony Nowshera');
+
+insert into tax_payer(CNIC,name,email_address,phone,nationality,residential_address)
+values('4256187713552','Saba Arshad','saba@gmail.com','03002651923','Pakistan','House no 15 Street 2 DHA Hyderabad'),
+('4312192213115','Ather Sabir','ather@gmail.com','03006543127','Pakistan','House no 674 Street 3 Clifton Karachi'),
+('461871397446','Shumaila Zaheer','shumaila@gmail.com','03339013225','Pakistan','House no 52 Street 11 Nazimabad Karachi');
+
+insert into tax_payer(CNIC,name,email_address,phone,nationality,residential_address)
+values('7171356943321','Khalid Rasool','k@gmail.com','03335492118','Pakistan','House no 124 Street 34 Hunza'),
+('7212944572272','Sobia Arshad','sobia@gmail.com','03002749991','Pakistan','House no 89 Street 11 Hunza');

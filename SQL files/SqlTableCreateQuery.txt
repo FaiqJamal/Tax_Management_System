@@ -1,0 +1,60 @@
+create database Tax_Management_System;
+create table Tax_Payer(
+CNIC int primary key,
+name varchar(20),
+email_address varchar(50),
+nationality varchar(30),
+residential_address varchar(50));
+create table Vehicle_Tax(
+vehicle_id integer primary key,
+engine_size integer,
+date_registeration date,
+CNIC int,
+payment_status set('paid','unpaid'),
+constraint vehicle_cnic foreign key(CNIC) references tax_payer(CNIC));
+create table property_tax(
+property_id int auto_increment primary key,
+annual_value float,
+land_size float,
+address varchar(100),
+payment_status set('paid','unpaid'),
+CNIC int,
+constraint property_cnic foreign key(CNIC) references tax_payer(CNIC));
+create table sales_tax(
+consumer_num integer primary key,
+reg_type set('Manufacturer','Non-Manufacturer'),
+bank_account integer,
+CNIC int,
+constraint sales_cnic foreign key(CNIC) references tax_payer(CNIC));
+create table business_details(
+business_name varchar(50),
+acquisition_date date,
+business_activity varchar(100),
+consumer_num integer,
+constraint details_sale foreign key(consumer_num) references sales_tax(consumer_num));
+create table goods_details(
+description varchar(50),
+quantity integer,
+value float,
+consumer_num integer,
+constraint goods_sale foreign key(consumer_num) references sales_tax(consumer_num));
+create table income_tax(
+NTN integer primary key,
+accounting_period int,
+annual_income float,
+CNIC integer,
+constraint income_cnic foreign key(CNIC) references tax_payer(CNIC));
+create table business_income(
+business_name varchar(50),
+business_address varchar(100),
+business_activity varchar(50),
+NTN integer,
+constraint business_income foreign key(NTN) references income_tax(NTN));
+create table salary_income(
+name_emp varchar(50),
+NTN integer,
+constraint salary_income foreign key(NTN) references income_tax(NTN));
+create table property_income(
+address varchar(50),
+NTN integer,
+constraint property_income foreign key(NTN) references income_tax(NTN));

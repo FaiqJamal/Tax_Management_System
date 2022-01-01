@@ -1,0 +1,5 @@
+CREATE DEFINER='root'@'localhost' trigger set_payment_trigger before insert on income_tax for each row set new.payment_status='unpaid';
+CREATE DEFINER='root'@'localhost' trigger set_payment_trigger before insert on income_tax for each row set new.payment_status='unpaid';
+CREATE DEFINER='root'@'localhost' trigger set_payment_sales_trigger before insert on sales_tax for each row set new.payment_status='unpaid';
+CREATE DEFINER='root'@'localhost' trigger set_payment_property_trigger before insert on property_tax for each row set new.payment_status='unpaid';
+CREATE DEFINER='root'@'localhost' trigger set_payment_vehicle_trigger before insert on income_tax for each row set new.payment_status='unpaid';
