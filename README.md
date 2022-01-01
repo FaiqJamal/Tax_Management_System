@@ -8,7 +8,7 @@ github link : https://github.com/FaiqJamal
 
 2) ALINA NASIR
 
-github link : http://github.com/Alina
+github link : http://github.com/Alina-Nasir
 
 3) MYDAH NASIR 
 
